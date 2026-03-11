@@ -17,11 +17,7 @@ jobs:
         uses: webfactory/ssh-agent@v0.5.3
         with:
           # SSH Private Key di-hardcode di sini
-          ssh-private-key: |
-            -----BEGIN RSA PRIVATE KEY-----
-            ISI_PRIVATE_KEY_PEM_KAMU_DI_SINI
-            MIIEpAIBAAKCAQEA75p... (dan seterusnya)
-            -----END RSA PRIVATE KEY-----
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Deploy to AWS EC2
         run: |
